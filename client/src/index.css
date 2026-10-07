@@ -1,0 +1,228 @@
+/* index.css - Minimal Design System */
+:root {
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --primary: #3b82f6;
+  --success: #10b981;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+
+  /* IPL Team Accents */
+  --team-mi: #004ba0;
+  --team-csk: #fdb913;
+  --team-rcb: #d71920;
+  --team-srh: #f26522;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* Card */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+/* Buttons */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  padding: 10px 18px;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+button:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary { background: var(--primary); color: white; }
+.btn-success { background: var(--success); color: white; }
+.btn-danger  { background: var(--danger);  color: white; }
+.btn-outline {
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  color: var(--text-main);
+}
+.btn-outline:hover { background: #f1f5f9; }
+
+/* Badges / Chips */
+.badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+}
+.badge-available { background: #f8fafc; color: #334155; border: 1px solid #cbd5e1; }
+.badge-sold      { background: #f8fafc; color: #0f172a; border: 1px solid #94a3b8; }
+.badge-unsold    { background: #f8fafc; color: #475569; border: 1px solid #cbd5e1; }
+.badge-batting   { background: #f8fafc; color: #334155; border: 1px solid #cbd5e1; }
+.badge-bowling   { background: #f8fafc; color: #334155; border: 1px solid #cbd5e1; }
+.badge-both      { background: #f8fafc; color: #334155; border: 1px solid #cbd5e1; }
+
+/* Grid & Flex Utilities */
+.grid { display: grid; gap: 16px; }
+.flex { display: flex; gap: 12px; align-items: center; }
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+
+/* Auction board */
+.auction-board__main {
+  grid-template-columns: 1fr;
+}
+
+.available-players-grid {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.player-card--clickable {
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.player-card--clickable:hover {
+  border-color: #94a3b8;
+}
+
+.player-card--selected {
+  border-color: #0f172a;
+}
+
+.bid-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bid-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  background: var(--bg-color);
+}
+
+.bid-row--highest {
+  border-color: #0f172a;
+  background: #f1f5f9;
+  font-weight: 600;
+}
+
+.auctioneer-panel {
+  border-color: var(--card-border);
+}
+
+.bid-box-panel {
+  border-color: var(--card-border);
+}
+
+.input-bid:focus {
+  border-color: #0f172a !important;
+  box-shadow: none;
+}
+
+.spectator-panel {
+  border-color: var(--card-border);
+}
+
+.team-roster-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.team-roster-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 768px) {
+  .auction-board__main {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .flex-between {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  header.flex-between .flex {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  header.flex-between button {
+    flex: 1 1 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Tighter container padding on very small phones */
+  .container {
+    padding: 16px 12px;
+  }
+
+  /* Player cards: allow smaller min-width so they don't overflow */
+  .available-players-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  /* Bid input + Reset Min button: stack vertically */
+  .bid-input-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .bid-input-row input,
+  .bid-input-row button {
+    width: 100%;
+  }
+
+  /* Header title size */
+  header h1 {
+    font-size: 18px !important;
+  }
+
+  /* Cards: reduce padding on small screens */
+  .card {
+    padding: 14px;
+  }
+}

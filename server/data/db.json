@@ -1,0 +1,176 @@
+{
+  "teams": [
+    {
+      "id": "Team-1",
+      "name": "Mumbai Indians",
+      "totalBudget": 500000,
+      "remainingBudget": 470000
+    },
+    {
+      "id": "Team-2",
+      "name": "Chennai Super Kings",
+      "totalBudget": 500000,
+      "remainingBudget": 469000
+    },
+    {
+      "id": "Team-3",
+      "name": "Royal Challengers Bengaluru",
+      "totalBudget": 500000,
+      "remainingBudget": 500000
+    },
+    {
+      "id": "Team-4",
+      "name": "Sunrisers Hyderabad",
+      "totalBudget": 500000,
+      "remainingBudget": 500000
+    }
+  ],
+  "players": [
+    {
+      "id": "Player-1",
+      "name": "Virat Kohli",
+      "skill": "batting",
+      "base_price": 30000,
+      "status": "available",
+      "sold_price": null,
+      "team_id": null
+    },
+    {
+      "id": "Player-2",
+      "name": "Rohit Sharma",
+      "skill": "batting",
+      "base_price": 30000,
+      "status": "sold",
+      "sold_price": 30000,
+      "team_id": "Team-1"
+    },
+    {
+      "id": "Player-3",
+      "name": "MS Dhoni",
+      "skill": "batting",
+      "base_price": 30000,
+      "status": "sold",
+      "sold_price": 31000,
+      "team_id": "Team-2"
+    },
+    {
+      "id": "Player-4",
+      "name": "Jasprit Bumrah",
+      "skill": "bowling",
+      "base_price": 30000,
+      "status": "in_auction",
+      "sold_price": null,
+      "team_id": null
+    },
+    {
+      "id": "Player-5",
+      "name": "Ravindra Jadeja",
+      "skill": "both",
+      "base_price": 30000,
+      "status": "available",
+      "sold_price": null,
+      "team_id": null
+    },
+    {
+      "id": "Player-6",
+      "name": "Hardik Pandya",
+      "skill": "both",
+      "base_price": 30000,
+      "status": "available",
+      "sold_price": null,
+      "team_id": null
+    },
+    {
+      "id": "Player-7",
+      "name": "KL Rahul",
+      "skill": "batting",
+      "base_price": 30000,
+      "status": "available",
+      "sold_price": null,
+      "team_id": null
+    },
+    {
+      "id": "Player-8",
+      "name": "Yuzvendra Chahal",
+      "skill": "bowling",
+      "base_price": 30000,
+      "status": "available",
+      "sold_price": null,
+      "team_id": null
+    },
+    {
+      "id": "Player-9",
+      "name": "Shubman Gill",
+      "skill": "batting",
+      "base_price": 30000,
+      "status": "available",
+      "sold_price": null,
+      "team_id": null
+    },
+    {
+      "id": "Player-10",
+      "name": "Mohammed Shami",
+      "skill": "bowling",
+      "base_price": 30000,
+      "status": "available",
+      "sold_price": null,
+      "team_id": null
+    },
+    {
+      "id": "Player-11",
+      "name": "Suryakumar Yadav",
+      "skill": "batting",
+      "base_price": 30000,
+      "status": "available",
+      "sold_price": null,
+      "team_id": null
+    },
+    {
+      "id": "Player-12",
+      "name": "Ravichandran Ashwin",
+      "skill": "bowling",
+      "base_price": 30000,
+      "status": "available",
+      "sold_price": null,
+      "team_id": null
+    }
+  ],
+  "bids": [
+    {
+      "id": "Bid-1791389738375",
+      "playerId": "Player-2",
+      "teamId": "Team-1",
+      "teamName": "Mumbai Indians",
+      "amount": 30000,
+      "timestamp": "2026-10-07T16:15:38.375Z"
+    },
+    {
+      "id": "Bid-1791390479779",
+      "playerId": "Player-3",
+      "teamId": "Team-1",
+      "teamName": "Mumbai Indians",
+      "amount": 30000,
+      "timestamp": "2026-10-07T16:27:59.779Z"
+    },
+    {
+      "id": "Bid-1791390535017",
+      "playerId": "Player-3",
+      "teamId": "Team-2",
+      "teamName": "Chennai Super Kings",
+      "amount": 31000,
+      "timestamp": "2026-10-07T16:28:55.017Z"
+    },
+    {
+      "id": "Bid-1791392387219",
+      "playerId": "Player-4",
+      "teamId": "Team-3",
+      "teamName": "Royal Challengers Bengaluru",
+      "amount": 30000,
+      "timestamp": "2026-10-07T16:59:47.219Z"
+    }
+  ],
+  "auction": {
+    "currentPlayerId": "Player-4",
+    "status": "active"
+  }
+}
